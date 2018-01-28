@@ -7,12 +7,14 @@ const readline = require("readline");
 var Command;
 (function (Command) {
     Command["GO"] = "GO";
+    Command["LOOK"] = "LOOK";
     Command["TAKE"] = "TAKE";
     Command["USE"] = "USE";
     Command["INVENTORY"] = "INVENTORY";
     Command["QUIT"] = "QUIT";
 })(Command = exports.Command || (exports.Command = {}));
-const commands = [Command.GO, Command.TAKE, Command.USE, Command.INVENTORY, Command.QUIT];
+//for easy listing/comparison
+const commands = [Command.GO, Command.LOOK, Command.TAKE, Command.USE, Command.INVENTORY, Command.QUIT];
 /**
  * A class for handling input commands for a basic adventure game.
  * Acts as a simple wrapper around Node's `readline` module.
@@ -40,11 +42,12 @@ class CommandParser {
                 firstSpace = line.length;
             let cmd = line.substr(0, firstSpace).toUpperCase();
             if (cmd === Command.QUIT) {
+                //could add "goodbye" message here
                 this.io.close();
             }
             else if (Command[cmd]) {
                 let arg = line.substr(firstSpace + 1);
-                let shouldProceed = this.handler(cmd, arg);
+                let shouldProceed = this.handler(cmd, arg); //call handler function!
                 if (shouldProceed) {
                     this.io.prompt();
                 }
