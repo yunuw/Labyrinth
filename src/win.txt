@@ -1,0 +1,26 @@
+Go east
+Take extinguisher
+Go west
+Go south
+Take key
+Go south
+Take sword
+Inventory
+Go east
+Use sword
+Go east
+Look area
+Use key
+Go east
+Take treasure
+Go west
+Go north
+Take flashlight
+Inventory
+look extinguisher
+Use extinguisher
+Go east
+Use flashlight
+Go north
+Go west
+Go west

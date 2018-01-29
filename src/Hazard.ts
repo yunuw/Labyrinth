@@ -1,19 +1,23 @@
 import { Item } from './Item';
 
-export class Hazard{
+export class Hazard {
     private _description: string;
-    private _item: Item;
+    private item: Item;
 
-    constructor(description: string, item: Item){
+    constructor(description: string, item: Item) {
         this._description = description;
-        this._item = item;
+        this.item = item;
     }
 
-    get description(): string{
+    get description(): string {
         return this._description;
     }
 
-    get item(): Item{
-        return this._item;
+    public canBeCouqueredBy(itemName: string): boolean {
+        if (this.item.name === itemName) {
+            return true;
+        }
+
+        return false;
     }
 }

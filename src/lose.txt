@@ -1,0 +1,3 @@
+Go south
+Take key
+Go east

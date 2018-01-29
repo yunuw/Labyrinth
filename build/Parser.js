@@ -42,7 +42,7 @@ class CommandParser {
                 firstSpace = line.length;
             let cmd = line.substr(0, firstSpace).toUpperCase();
             if (cmd === Command.QUIT) {
-                //could add "goodbye" message here
+                console.log(`Thank you! See you next time.`);
                 this.io.close();
             }
             else if (Command[cmd]) {

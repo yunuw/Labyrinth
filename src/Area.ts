@@ -1,52 +1,50 @@
 import { Hazard } from './Hazard';
 import { Item } from './Item';
-import {Treasure } from './Treasure';
+import { Treasure } from './Treasure';
 import { Pos } from './Pos';
 
-export class Area{
+export class Area {
     private _name: string;
     private _pos: Pos;
     private _isExit: boolean;
     public item?: Item;
     public hazard?: Hazard;
     public treasure?: Treasure;
-    
-    constructor(name: string, pos: Pos, isExit: boolean){
-        this._name = name;
+
+    constructor(name: string, pos: Pos, isExit: boolean) {
+        this._name = name.toUpperCase();
         this._pos = pos;
         this._isExit = isExit;
         this.item = undefined;
     }
 
-    get name(): string{
+    get name(): string {
         return this._name;
     }
 
-    get position(): Pos{
+    get position(): Pos {
         return this._pos;
     }
 
-    get isExit(): boolean{
+    get isExit(): boolean {
         return this._isExit;
     }
 
-    public description(): string{
-        let desc: string = this.name.toUpperCase() + "\n";
-        desc += "You are in the " + this.name.toLowerCase() + ".\n";
-       
-        if(this.item){
-            desc += "There is a " + this.item.name + " on the table.\n";
-            desc += this.item.functionality + "\n";
+    public displayDescription(): void {
+        console.log(this.name);
+        console.log("You are in the " + this.name + ".");
+
+        if (this.item) {
+            console.log("There is a " + this.item.name + " on the table.");
+            console.log(this.item.functionality);
         }
 
-        if(this.hazard){
-            desc += this.hazard.description + "\n";
+        if (this.hazard) {
+            console.log(this.hazard.description);
         }
 
-        if(this.treasure){
-            desc += "There is a " + this.treasure.name + " in the closet.\n";
+        if (this.treasure) {
+            console.log("There is a " + this.treasure.name + " in the closet.");
         }
-
-        return desc;
     }
 }

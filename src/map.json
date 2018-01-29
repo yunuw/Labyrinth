@@ -1,0 +1,89 @@
+{
+    "mapSize": 3,
+    "player": {
+        "x": 0,
+        "y": 0
+    },
+    "monster": {
+        "x": 2,
+        "y": 2
+    },
+    "area": [
+        {
+            "name": "Red Square",
+            "isExit": true
+        },
+        {
+            "name": "Kane Hall",
+            "isExit": false,
+            "item": {
+                "name": "extinguisher",
+                "functionality": "You can use it to put out the fire."
+            }
+        },
+        {
+            "name": "Suzzallo Library",
+            "isExit": false
+        },
+        {
+            "name": "Meany Hall",
+            "isExit": false,
+            "item": {
+                "name": "key",
+                "functionality": "You can use it to open a locked door."
+            }
+        },
+        {
+            "name": "Mary Gates Hall",
+            "isExit": false,
+            "item": {
+                "name": "flashlight",
+                "functionality": "You can use it to light up the room."
+            },
+            "hazard": {
+                "description": "There is a wall of flames.",
+                "item": {
+                    "name": "extinguisher",
+                    "functionality": "You can use it to put out the fire."
+                }
+            }
+        },
+        {
+            "name": "Johnson Hall",
+            "isExit": false,
+            "hazard": {
+                "description": "It is pitch black here, you cannot see where the door is.",
+                "item": {
+                    "name": "flashlight",
+                    "functionality": "You can use it to light up the room."
+                }
+            }
+        },
+        {
+            "name": "Bagley Hall",
+            "isExit": false,
+            "item": {
+                "name": "sword",
+                "functionality": "You can use it to kill the monster."
+            }
+        },
+        {
+            "name": "Allen Library",
+            "isExit": false,
+            "hazard": {
+                "description": "You're locked in a big closet.",
+                "item": {
+                    "name": "key",
+                    "functionality": "You can use it to open a locked door."
+                }
+            }
+        },
+        {
+            "name": "Drumheller Fountain",
+            "isExit": false,
+            "treasure": {
+                "name": "treasure"
+            }
+        }
+    ]
+}
